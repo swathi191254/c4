@@ -1,13 +1,20 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import {Rout} from 'react-router-dom';
-import signIn from './auth/signin'
+import { Admin } from './Components/Admin';
+import { Login } from './Components/Login';
+import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Rout path="/signin"auth = {signIn} />
+      <Navbar />
+
+      <Routes>
+        <Route path="./Components/Login" element={<Login />} ></Route>
+        <Route path="./Components/Admin" element={<Admin />} ></Route>
+      </Routes>
     </div>
   );
 }
 
-export default App;
+export default App
